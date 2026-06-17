@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Q7 {
+public class Q9 {
     public boolean isPalindrome(int x) {
         int rev=0;
         int num=x;
@@ -21,7 +21,7 @@ public class Q7 {
     }
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        Q7 obj=new Q7();
+        Q9 obj=new Q9();
         System.out.println("Enter the number:");
         int n=sc.nextInt();
         boolean res=obj.isPalindrome(n);
