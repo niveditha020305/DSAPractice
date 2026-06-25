@@ -1,0 +1,41 @@
+class Solution {
+    public int[] transformArray(int[] nums) {
+        int[] ans=new int[nums.length];
+
+        int x=0;
+        int y=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]%2==0){
+                x++;
+            }
+            else{
+                y++;
+            }
+        }
+        Arrays.fill(ans, 0, x, 0);     
+        Arrays.fill(ans, x, x + y, 1); 
+
+        return ans;
+    }
+}
+
+Two pointer solution
+
+class Solution {
+    public int[] transformArray(int[] nums) {
+        int[] ans=new int[nums.length];
+
+        int left=0;
+        int right=nums.length-1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]%2==0){
+                ans[left++]=0;
+            }
+            else{
+                ans[right--]=1;
+            }
+        }
+
+        return ans;
+    }
+}
