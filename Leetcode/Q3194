@@ -1,0 +1,33 @@
+class Solution {
+    public double minimumAverage(int[] nums) {
+        double minAverage=100;
+
+       for(int i=0;i<nums.length;i++){
+            int min=i;
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[j]<nums[min]){
+                    min=j;
+
+                }
+            }
+            int temp=nums[min];
+            nums[min]=nums[i];
+            nums[i]=temp;
+        }
+
+        int left=0;
+        int right=nums.length-1;
+        double average=0;
+
+        for(int i=0;i<nums.length/2;i++){
+            average=(double)(nums[left]+nums[right])/2;
+            if(average<minAverage){
+                minAverage=average;
+            }
+            left++;
+            right--;
+        }
+
+        return minAverage;
+    }
+}
