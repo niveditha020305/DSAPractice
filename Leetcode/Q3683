@@ -1,0 +1,19 @@
+class Solution {
+    public int earliestTime(int[][] tasks) {
+        int minimum=Integer.MAX_VALUE;
+        int time=0;
+
+        for(int i=0;i<tasks.length;i++){
+            time=0;
+            for(int j=0;j<tasks[i].length;j++){
+                time+=tasks[i][j];
+            }
+
+            if(time<minimum){
+                minimum=time;
+            }
+        }
+
+        return minimum;
+    }
+}
