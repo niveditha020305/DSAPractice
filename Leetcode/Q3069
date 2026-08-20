@@ -1,0 +1,41 @@
+class Solution {
+    public int[] resultArray(int[] nums) {
+        int[] arr1=new int[nums.length];
+        int[] arr2=new int[nums.length];
+        int[] result=new int[nums.length];
+
+        arr1[0]=nums[0];
+        arr2[0]=nums[1];
+        int left=0;
+        int right=0;
+
+        for(int i=2;i<nums.length;i++){
+            if(arr1[left]>arr2[right]){
+                arr1[left+1]=nums[i];
+                left++;
+            }
+            else{
+                arr2[right+1]=nums[i];
+                right++;
+            }
+        }
+        int j=0;
+        for(int i=0;i<arr1.length;i++){
+            if(arr1[i]!=0){
+                result[j]=arr1[i];
+                j++;
+            }
+            
+        }
+
+        for(int i=0;i<arr2.length;i++){
+            if(arr2[i]!=0){
+                result[j]=arr2[i];
+                j++;
+            }
+            
+        }
+
+        return result;
+    }
+}
